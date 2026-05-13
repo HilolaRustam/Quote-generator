@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote generator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+    <h1>Your daily Quote</h1>
+    <div id="quote-box">
+    <p id="quote-text">Quote</p>
+    <p id="quote-author">Author </p>
+    </div>
+    <button type="button" id="new-quote">New quote</button>
+
+    <button type="button" id="show-form-btn">Add New Quote</button>
+
+    <form id="quote-form" class="hidden">
+  <input
+    type="text"
+    id="new-quote-text"
+    placeholder="Enter a quote"
+    required
+  />
+  <input
+    type="text"
+    id="new-quote-author"
+    placeholder="Enter the Author"
+    required
+  />
+  <button type="submit">
+    Add Quote
+  </button>
+</form>
+    </div>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
