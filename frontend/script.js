@@ -1,5 +1,3 @@
-document.getElementById("success-message").innerText =
-  "TEST MESSAGE";
 async function displayRandomQuote() {
   const response = await fetch("http://localhost:3000/quotes/random");
   const randomQuote = await response.json();
@@ -43,11 +41,12 @@ document
       document.getElementById("quote-form").reset();
 
       document.getElementById("quote-form").classList.add("hidden");
-    setTimeout(() => {
+      
+      setTimeout(() => {
         document.getElementById("success-message").innerText = "";
       }, 3000);
-    }
-  });
+  }
+});
 
 document.getElementById("show-form-btn").addEventListener("click", function () {
   document.getElementById("quote-form").classList.remove("hidden");
