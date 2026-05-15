@@ -44,7 +44,7 @@ document
       
       setTimeout(() => {
         document.getElementById("success-message").innerText = "";
-      }, 3000);
+      }, 5000);
   }
 });
 
