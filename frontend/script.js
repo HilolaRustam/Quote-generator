@@ -43,11 +43,11 @@ document
             .reset();
          
         document 
-            .getElementsById("quote-form")
+            .getElementById("quote-form")
             .classList.add("hidden");  
     }    
 });
-  
+
 document
   .getElementById("show-form-btn")
   .addEventListener("click", function () {
