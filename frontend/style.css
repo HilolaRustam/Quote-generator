@@ -1,0 +1,146 @@
+/* Overall background */
+body {
+  background-color: #87d17c;
+  font-family: 'Georgia', serif;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+h1 {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+
+  color: white;
+  font-size: 2rem;
+}
+/* White box around quote */
+#quote-box {
+  background-color: white;
+  padding: 40px;
+  border: 3px solid  #87d17c; /* green border */
+  border-radius: 8px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+/* Quote text */
+#quote-text {
+  font-size: 1.8rem;
+  color: #87d17c; /* green text */
+  margin-bottom: 20px;
+}
+
+/* Author text */
+#quote-author {
+  font-size: 1.2rem;
+  color: #87d17c; /* green text */
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+/* Button */
+#new-quote {
+  background-color:#87d17c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#new-quote:hover {
+  background-color: #87d17c;
+}
+#quote-text::before {
+  content: "“"; /* Large opening quote */
+  font-size: 3rem;
+  vertical-align: top;
+  color: #87d17c; /* Match your orange theme */
+  margin-right: 10px;
+  display: inline-block;
+}
+#quote-form {
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  width: 500px;
+
+  background-color: white;
+
+  padding: 30px;
+
+  border-radius: 8px;
+
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+#quote-form input {
+  padding: 15px;
+
+  border: 2px solid #87d17c;
+
+  border-radius: 5px;
+
+  font-size: 1rem;
+
+  color:#87d17c;
+
+  outline: none;
+}
+#quote-form button {
+  background-color: #439736;
+
+  color: white;
+
+  border: none;
+
+  padding: 15px;
+
+  border-radius: 5px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease;
+}
+
+
+#show-form-btn {
+ background-color:#87d17c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+#quote-form input::placeholder {
+  color: #518b48;
+  opacity: 0.7;
+}
+#quote-form.hidden {
+  display: none;
+}
+#success-message {
+  color: rgb(230, 62, 62);
+
+  margin-top: 20px;
+
+  font-size: 1.1rem;
+
+  font-weight: bold;
+}
