@@ -26,7 +26,7 @@ function pickRandomQuote() {
 app.get("/quotes/random", (req, res) => {
   console.error("Received a request for a quote");
   const quote = pickRandomQuote();
-  res.send(`"${quote.quote}" -${quote.author}`);
+  res.json(quote);
 });
 
 app.post("/", (req, res) => {
