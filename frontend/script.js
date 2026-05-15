@@ -1,13 +1,7 @@
-import{ quotes } from "./quotes.js";
 
-function pickFromArray(choices) {
-  return choices[
-    Math.floor(Math.random() * choices.length)
-  ];
-}
-
-function displayRandomQuote() {
-  const randomQuote = pickFromArray(quotes);
+async function displayRandomQuote() {
+  const response = await fetch ("http://localhost:3000/quotes/random");
+  const randomQuote = await response.json ();
   document.getElementById("quote-text").innerText = `"${randomQuote.quote}"`;
   document.getElementById("quote-author").innerText = `– ${randomQuote.author}`;
 }
@@ -21,7 +15,7 @@ window.onload = displayRandomQuote;
 
 document
   .getElementById("quote-form")
-  .addEventListener("submit", function (event) {
+  .addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
@@ -30,21 +24,30 @@ document
 
     const quoteAuthor =
       document.getElementById("new-quote-author").value;
+    const response =await fetch("http://localhost:3000/",
+        { method: "POST", 
+            headers: {
+                "Content-Type": "application/json",
+            },
 
-    const newQuote = {
-      quote: quoteText,
-      author: quoteAuthor,
-    };
-
-    quotes.push(newQuote);
-
-    displayRandomQuote();
-
-    document.getElementById("quote-form").reset();
-    document
-  .getElementById("quote-form")
-  .classList.add("hidden");
+            body: JSON.stringify({
+                quote:quoteText,
+                author: quoteAuthor,
+            }),
+            }
+        );
+    if (response.ok) {
+        displayRandomQuote();
+        document
+            .getElementById("quote-form")
+            .reset();
+         
+        document 
+            .getElementsById("quote-form")
+            .classList.add("hidden");  
+    }    
 });
+  
 document
   .getElementById("show-form-btn")
   .addEventListener("click", function () {
